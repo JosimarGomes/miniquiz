@@ -7,7 +7,7 @@ Este é o projeto MobileFlashCard, do Nanodegree de React da Udacity. Turma Sete
 Importante: Este projeto foi desenvolvido e testado apenas em Android
 
 Para iniciar o projeto:
-* clone o projeto com `git clone https://github.com/JosimarGomes/myreads.git`
+* clone o projeto com `https://github.com/JosimarGomes/miniquiz.git`
 * instale as dependências com `npm install`
 * faça o link das dependências nativas com `react-native link`
 * inicie o servidor de desenvolvimento com `npm start`
