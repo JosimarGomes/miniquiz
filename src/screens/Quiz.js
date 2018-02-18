@@ -140,11 +140,14 @@ class Card extends Component {
         if(value < 50)
             return {title: "Precisa melhorar", color: "orange", icon: "md-thumbs-down", value};
 
-        if(value >= 50 && value <= 70)
+        if(value >= 50 && value <= 60)
             return {title: "Nada mal.", color: "#56c941", icon: "md-thumbs-up", value};
 
-        if(value > 70 && value <= 95)
-            return {title: "Parabéns!", color: "#56c941", icon: "md-trophy", value};
+        if(value >= 60 && value <= 75)
+            return {title: "Muito bom.", color: "#56c941", icon: "md-thumbs-up", value};
+
+        if(value > 75 && value <= 95)
+            return {title: "Ótimo, parabéns!", color: "#56c941", icon: "md-trophy", value};
 
         if(value > 95)
             return {title: "Mestre Jedi!!", color: "#56c941", icon: "md-planet", value};

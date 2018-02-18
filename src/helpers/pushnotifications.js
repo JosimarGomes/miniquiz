@@ -34,7 +34,7 @@ const AppNotifications = {
     	.then(data => {
 			if (data === null) {				
 
-				const date = AppNotifications._getDateNotification(true);
+				const date = AppNotifications._getDateNotification();
 				const message = AppNotifications._getMessageNotification();
 	
 				PushNotification.localNotificationSchedule({

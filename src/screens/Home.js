@@ -125,9 +125,6 @@ class Home extends Component {
                     >
                         <Camera closeCamera={()=>this.closeCamera()} />
                     </Modal>
-                    {/* <View style={styles.header}> 
-                        <Icon name={'md-person'} type='ionicon' color={'orange'} size={25}/>                   
-                    </View> */}
                     <Avatar name={name} value={xp} userphoto={userphoto} onPressPhoto={()=>this.openCamera()} />
                     <View style={styles.decklist}>    
                         <FlatList
@@ -145,10 +142,11 @@ class Home extends Component {
                         this.state.selecteddeck ?
                         <Animated.View style={[styles.footerEdit,{flex: animatedFlex}]}>
                             <TouchableOpacity onPress={()=>this._deleteDeck()} style={{flexDirection:'row'}}>
-                                <Text style={{color:'#fff', fontWeight:'bold'}}>Excluir</Text>
+                            <Icon size={24} name={'md-trash'} type='ionicon' color={'orange'} style={{bottom:4}} />
+                                <Text style={styles.textFooter}>Excluir</Text>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={()=>this.setState({selecteddeck:null})} style={{flexDirection:'row'}}>
-                                <Text style={{color:'#fff', fontWeight:'bold'}}>Cancelar</Text>
+                                <Text style={styles.textFooter}>Cancelar</Text>
                             </TouchableOpacity>
                         </Animated.View>   
                         :
@@ -190,10 +188,15 @@ const styles = StyleSheet.create({
     },
     footerEdit: {
         flexDirection:'row',
-        backgroundColor:'red',
         width: width,
         height:20,
         alignItems:'center',
         justifyContent:'space-around'
+    },
+    textFooter: {
+        fontWeight:'bold',
+        fontSize:20,
+        color: 'orange',
+        marginLeft:10
     }
 });

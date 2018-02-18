@@ -1,40 +1,23 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions, Image} from 'react-native';
 import * as Animatable from 'react-native-animatable';
+import { Icon } from 'react-native-elements';
 
 const { width, height } = Dimensions.get('window');
 
 
 export default (props)=>{
     const {title, questions} = props;
-
-    const _styleSelected = ()=>{
-        if(props.selected)
-            return { 
-                elevation : 6,
-                shadowOffset:{
-                    width: 1,
-                    height: 1,
-                },
-                shadowOpacity: 0.4,
-                borderRadius:5,
-                borderTopWidth:2,
-                borderColor:'red',
-                width: width * 0.26,
-                height: width * 0.36,
-                shadowRadius : 5,
-                backgroundColor: '#f1f1f1'
-            };
-        
-        return {};
-    }
     
     return(                
         <TouchableOpacity activeOpacity={.6} onPress={()=>props.onPress() || false} onLongPress={()=>props.onLongPress() || false}>
-            <Animatable.View animation={"bounceIn"} style={[styles.deck, _styleSelected()]}>
+            <Animatable.View animation={"bounceIn"} style={styles.deck}>
                 <Image source={require('../img/bgdeck.png')} style={styles.deckbg} resizeMode='cover' />            
-                <View style={styles.content}>
+                <View style={styles.content}>                                       
                     <Text style={styles.title}>{title}</Text>
+                    {
+                        props.selected&&<Icon name='md-checkmark-circle' size={35} type='ionicon' color='orange'/>
+                    } 
                     <Text style={styles.card}>{`${questions.length} cartas`}</Text>
                 </View>
             </Animatable.View>
